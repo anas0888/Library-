@@ -13,6 +13,27 @@
 				<div class = "addButton"> <button command = "show-modal" commandfor = "my-dialog"> Add </button> 
 					<dialog id = "my-dialog">
 						<p> this is to check our dialog box </p>
+						
+					        <form action = "/submitBook" method = "post">
+							<label for = "bookName"> Name of book </label>
+`							<input type = "text" id = "bookName" name = "bookName" required>
+
+							
+
+                                                   	<label for = "authorName"> Name of Author </label>
+							<input type = "text" id = "bookName" name = "bookName" required>
+
+							<label for = "pageNumber"> Number of pages </label>
+							<input type = "number" id = "pageNumber" >
+
+                                                  	
+							<label for = "read"> Read</label>
+                                                        <input type = "radio" id = "read">
+
+                                                 	<label for = "notread"> Not Read</label>
+                                                        <input type = "radio" id = "notread">
+
+						</form>
 						<button commandfor = "my-dialog" command = "close"> Close </button>
 					</dialog>
 				</div>
