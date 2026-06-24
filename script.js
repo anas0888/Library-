@@ -9,4 +9,6 @@ myDiv.textContent = "hello i am an new book";
 
 myDiv.style.width = "200px";
 myDiv.style.height = "200px";
+myDiv.style.border = "2px solid black"
+	
 });
