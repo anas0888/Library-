@@ -6,7 +6,7 @@
 		<link rel = "stylesheet" href = "style.css">
 	</head>
 	<body>
-		<div class = "container">
+		<div class = "container test">
 			<div class = "header"> 
 				<div class = "heading"> <h2> Library </h2> </div> <br>
 
@@ -16,7 +16,7 @@
 						
 					        <form action = "/submitBook" method = "post">
 							<label for = "bookName"> Name of book </label>
-`							<input type = "text" id = "bookName" name = "bookName" required>
+							<input type = "text" id = "bookName" name = "bookName" required>
 
 							
 
@@ -28,12 +28,12 @@
 
                                                   	
 							<label for = "read"> Read</label>
-                                                        <input type = "radio" id = "read">
+                            <input type = "radio" id = "read" name = "status">  
 
-                                                 	<label for = "notread"> Not Read</label>
-                                                        <input type = "radio" id = "notread">
-
+                            <label for = "notread"> Not Read</label>
+                            <input type = "radio" id = "notRead" name = "status">
 						</form>
+
 						<button commandfor = "my-dialog" command = "close"> Close </button>
 					</dialog>
 				</div>
@@ -50,16 +50,6 @@
 		</body>
 </html>
 		
-
-
-
-
-
-
-
-
-
-
 
 
 
