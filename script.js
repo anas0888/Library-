@@ -1,4 +1,4 @@
-const button = document.querySelector(".addButton");
+const button = document.querySelector(".submit");
 
 const mainArea = document.querySelector(".main");
 
