@@ -45,3 +45,13 @@ width:99%;
 height: 50px;
 text-align: center;
 }
+
+#myDialog{
+border: 0px;
+border-radius: 16px;
+width:80%;
+padding:2rem;
+background:#ffffff;
+margin: auto;
+}
+
