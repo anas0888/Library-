@@ -1,61 +1,315 @@
-*{
-margin: 0;
-padding: 0;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink:     #1a1f2e;
+  --teal:    #2a9d8f;
+  --teal-lt: #e8f7f5;
+  --dust:    #f4f5f7;
+  --border:  #d0d5de;
+  --muted:   #6b7280;
+  --danger:  #e05252;
+  --white:   #ffffff;
+  --radius:  10px;
+  --mono: 'DM Mono', monospace;
+  --sans: 'DM Sans', sans-serif;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--dust);
+  color: var(--ink);
+  min-height: 100vh;
 }
 
 
-.header{
-border : 2px solid black;
-width : 99%;
-height: 100px;
-display: flex;
-margin:5px;
-}
-.heading{
-width: 60%;
-height: 50px;
-margin-left : 10px;
-margin-top: 5px;
-}
-.addButton{
-width: 70px;
-height: 50px;
-}
-.submit{
-    width: 70px;
-height: 45px;
-    }
-.formBtn{
-width: 70px;
-height: 45px;
-margin-left: 400px;
-margin-top: 5px;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 
-.main{
-height: 550px;
-width: 99%;
-border: 2px solid black;
-margin: 5px;
-display: flex;
-flex-wrap: wrap;
-gap: 15px;
-
+.header {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border-bottom: 1.5px solid var(--border);
+  padding: 0 24px;
+  margin-bottom: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.footer{
-width:99%;
-height: 50px;
-text-align: center;
+.heading h2 {
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
 }
 
-#myDialog{
-border: 0px;
-border-radius: 16px;
-width:80%;
-padding:2rem;
-background:#ffffff;
-margin: auto;
+.heading h2::before {
+  content: '📚 ';
 }
 
+
+.addButton {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 20px;
+  height: 40px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.addButton:hover  { background: #238a7d; }
+.addButton:active { transform: scale(0.97); }
+
+
+#myDialog {
+  border: none;
+  border-radius: 16px;
+  width: min(520px, 92vw);
+  padding: 2rem;
+  background: var(--white);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+  margin: auto;
+}
+
+#myDialog::backdrop {
+  background: rgba(26, 31, 46, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+#myDialog p {
+  display: none; /* hide the placeholder test text */
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+form::before {
+  content: 'Add a Book';
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 4px;
+}
+
+form label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+form input[type="text"],
+form input[type="number"] {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--dust);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus {
+  border-color: var(--teal);
+  background: var(--white);
+}
+
+
+.radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+form input[type="radio"] {
+  accent-color: var(--teal);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.formBtn, .submit {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.formBtn {
+  background: var(--dust);
+  color: var(--muted);
+  border: 1.5px solid var(--border);
+}
+
+.formBtn:hover { background: var(--border); color: var(--ink); }
+
+.submit {
+  background: var(--teal);
+  color: var(--white);
+}
+
+.submit:hover { background: #238a7d; }
+
+
+.main {
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 4px 2px 32px;
+  align-content: flex-start;
+}
+
+
+.main:empty::after {
+  content: 'No books yet — add one above.';
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.main > div {
+  width: 210px;
+  min-height: 220px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.main > div:hover {
+  box-shadow: 0 4px 18px rgba(42,157,143,0.13);
+  transform: translateY(-2px);
+}
+
+
+.main > div p {
+  font-size: 0.85rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.main > div p:first-child {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--teal-lt);
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+}
+
+
+.main > div p:last-of-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: var(--teal-lt);
+  color: var(--teal);
+  width: fit-content;
+  margin-top: 4px;
+}
+
+
+.main > div button {
+  margin-top: auto !important;
+  background: transparent !important;
+  border: 1.5px solid var(--danger) !important;
+  color: var(--danger) !important;
+  font-family: var(--sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  padding: 5px 12px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: background 0.15s !important;
+  width: fit-content !important;
+  align-self: flex-end !important;
+}
+
+.main > div button:hover {
+  background: var(--danger) !important;
+  color: var(--white) !important;
+}
+
+
+.footer {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+}
