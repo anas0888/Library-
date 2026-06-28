@@ -17,14 +17,14 @@ myDiv.style.margin = "10px";
 const nameOfBook = document.getElementById('bookName').value
 const authorName = document.getElementById('authorName').value;
 const pageNumber = document.getElementById('pageNumber').value;
-const read = document.getElementById('read').value;
-const notRead = document.getElementById('notRead').value;
+
+const bookStatus =  document.querySelector('input[name = "status"]:checked').value;
+
 
 myDiv.innerHTML = `<p>Name: ${nameOfBook} </p> <br>
 <p> Author Name: ${authorName} </p><br>
 <p> Page Number: ${pageNumber} </p><br>
-<p> Read: ${read} </p><br>
-<p> Not Read ${notRead} </p>
+<p> Status: ${bookStatus} </p>
 
 `
 
