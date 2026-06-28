@@ -1,7 +1,8 @@
 const button = document.querySelector(".submit");
 
 const mainArea = document.querySelector(".main");
-
+const dialog = document.querySelector("dialog");
+const form = document.querySelector("form");
 
 button.addEventListener("click",function(event) {
 const myDiv = document.createElement('div');
@@ -43,8 +44,8 @@ myDiv.innerHTML = `<p>Name: ${nameOfBook} </p> <br>
 
 `
   myDiv.appendChild(removeBtn);
-
- 
+dialog.close();
+form.reset() ;
  
 });
 
