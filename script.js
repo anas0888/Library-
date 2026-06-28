@@ -3,11 +3,11 @@ const button = document.querySelector(".submit");
 const mainArea = document.querySelector(".main");
 
 
-button.addEventListener("click",function() {
+button.addEventListener("click",function(event) {
 const myDiv = document.createElement('div');
 myDiv.textContent = "hello i am an new book";
-// mainArea.appendChild(myDiv);
-// event.preventDefault();
+ mainArea.appendChild(myDiv);
+event.preventDefault();
 
 myDiv.style.width = "200px";
 myDiv.style.height = "200px";
@@ -27,7 +27,7 @@ const removeBtn = document.createElement('button');
    removeBtn.addEventListener('click' , function(){
 myDiv.remove();
        });
- //  myDiv.appendChild(removeBtn);
+  
 
 const nameOfBook = document.getElementById('bookName').value
 const authorName = document.getElementById('authorName').value;
@@ -42,9 +42,9 @@ myDiv.innerHTML = `<p>Name: ${nameOfBook} </p> <br>
 <p> Status: ${bookStatus} </p>
 
 `
-   myDiv.appendChild(removeBtn);
+  myDiv.appendChild(removeBtn);
 
- mainArea.appendChild(myDiv);
- event.preventDefault();
+ 
+ 
 });
 
